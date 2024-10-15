@@ -2,18 +2,16 @@
   "name": "fitness",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "if-env TYPE=server && (cd server && npm install) || (cd client && npm install)",
+    "server": "node ./sever/server.js",
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/AdrianQJohnson/fitness.git"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AdrianQJohnson/fitness/issues"
-  },
-  "homepage": "https://github.com/AdrianQJohnson/fitness#readme"
+  "dependencies": {
+    "if-env": "^1.0.4"
+  }
 }
